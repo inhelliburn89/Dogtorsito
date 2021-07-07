@@ -32,8 +32,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 //Estas son las rutas, por practica se añade API
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+const authRouter = require('./routes/auth');
 
 app.use('/api', indexRouter);
-app.use('/api/users', usersRouter);
+app.use('/api/auth', authRouter);
+app.use('/api/users/signup', usersRouter);
+app.use('/api/users/login', usersRouter);
+app.use('/api/users/logout', usersRouter);
 
 module.exports = app;
